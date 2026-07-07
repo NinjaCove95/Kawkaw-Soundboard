@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kawkaw Soundboard</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            color: #ffd700;
+            margin-bottom: 30px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            max-width: 500px;
+            width: 90%;
+        }
+        button {
+            background-color: #1e1e1e;
+            color: #ffffff;
+            border: 2px solid #ffd700;
+            padding: 20px 10px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+        }
+        button:hover {
+            background-color: #2a2a2a;
+        }
+        button:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Kawkaw Soundboard</h1>
+
+    <div class="grid">
+        <!-- Audio mapping perfectly matched to your chronological list -->
+        <button onclick="playSound('sound1.mp3')">NYON!</button>
+        <button onclick="playSound('sound2.mp3')">NYOOON!</button>
+        <button onclick="playSound('sound3.mp3')">UELULE</button>
+        <button onclick="playSound('sound4.mp3')">UELEULEULEUE (V1)</button>
+        <button onclick="playSound('sound5.mp3')">UELEULEULEUE (V2)</button>
+        <button onclick="playSound('sound6.mp3')">Sad NYON</button>
+        <button onclick="playSound('sound7.mp3')">Sad NYOOOON</button>
+        <button onclick="playSound('sound8.mp3')">Deep Sad NYOOOON</button>
+        <button onclick="playSound('sound9.mp3')">PAIN</button>
+    </div>
+
+    <script>
+        function playSound(file) {
+            const audio = new Audio(file);
+            audio.play().catch(e => console.log("Audio play blocked or file not found:", e));
+        }
+    </script>
+
+</body>
+</html>
